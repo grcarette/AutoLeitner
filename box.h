@@ -18,4 +18,5 @@ public:
 
 	int getBoxType();
 	vector<FlashCard> getCardArray();
+	FlashCard getFC();
 };

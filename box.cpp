@@ -1,4 +1,6 @@
 #include "box.h"
+#include <ctime>
+#include <cstdlib>
 #include <iostream>
 
 void FCBox::instCards() {
@@ -14,6 +16,7 @@ void FCBox::removeCard(int cardID) {
 			break;
 		}
 	}
+	cout << i << endl;
 	cardArray.erase(cardArray.begin() + i);
 }
 
@@ -22,4 +25,8 @@ int FCBox::getBoxType() {
 }
 vector<FlashCard> FCBox::getCardArray() {
 	return cardArray;
+}
+FlashCard FCBox::getFC() {
+	srand(time(0));
+	return cardArray[rand() % cardArray.size()];
 }
