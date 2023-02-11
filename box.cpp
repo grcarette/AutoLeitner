@@ -6,9 +6,15 @@
 void FCBox::instCards() {
 	//instantiate cards from file
 }
+
+void FCBox::setBoxType(int newBoxType) {
+	boxType = newBoxType;
+}
+
 void FCBox::addCard(FlashCard card) {
 	cardArray.push_back(card);
 }
+
 void FCBox::removeCard(int cardID) {
 	int i = 0;
 	for (i; i < cardArray.size(); i++) {
@@ -23,9 +29,11 @@ void FCBox::removeCard(int cardID) {
 int FCBox::getBoxType() {
 	return boxType;
 }
+
 vector<FlashCard> FCBox::getCardArray() {
 	return cardArray;
 }
+
 FlashCard FCBox::getFC() {
 	srand(time(0));
 	return cardArray[rand() % cardArray.size()];

@@ -8,11 +8,8 @@ private:
 	int boxType;
 
 public:
-	FCBox(int newBoxType) {
-		boxType = newBoxType;
-	}
-
 	void instCards();
+	void setBoxType(int newBoxType);
 	void addCard(FlashCard card);
 	void removeCard(int index);
 
