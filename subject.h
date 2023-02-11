@@ -1,5 +1,10 @@
 #pragma once
+#pragma warning(disable: 4996)
 #include "box.h"
+
+#define kNextCard '1'
+#define kSwitchBox '2'
+#define kQuit '3'
 
 class Subject {
 private:
@@ -12,10 +17,10 @@ public:
 	Subject(string newName, int newIDCount);
 	~Subject();
 
-	void createCard(FlashCard card);
+	void createCard(string question, string answer, int priority = 1);
 	void moveCard(FlashCard card, bool correct);
 	void selectBox(int boxNo);
-	void getQuestions();
+	void subjectLoop();
 	void displayQuestion(FlashCard card);
 	
 };
