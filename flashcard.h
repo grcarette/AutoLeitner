@@ -10,18 +10,16 @@ private:
 	string answer;
 	int conSuc;
 	int priority;
+	int cardID;
 public:
-	FlashCard(string newQuestion, string newAnswer, int newPriority = 1) {
-		question = newQuestion;
-		answer = newAnswer;
-		priority = newPriority;
-		conSuc = 0;
-	}
+	FlashCard(string newQuestion, string newAnswer, int newCardID, int newPriority);
+	~FlashCard();
 
 	string getQuestion();
 	string getAnswer();
 	int getConSuc();
 	int getPriority();
+	int getID();
 
 	void setQuestion(string newQuestion);
 	void setAnswer(string newAnswer);
