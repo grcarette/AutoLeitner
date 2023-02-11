@@ -11,33 +11,12 @@ private:
 	int conSuc;
 	int priority;
 public:
-	string getQuestion() {
-		return question;
-	}
-	string getAnswer() {
-		return answer;
-	}
-	int getConSuc() {
-		return conSuc;
-	}
-	int getPriority() {
-		return priority;
-	}
+	string getQuestion();
+	string getAnswer();
+	int getConSuc();
+	int getPriority();
 
-	void setQuestion(string newQuestion) {
-		question = newQuestion;
-	}
-
-	void setAnswer(string newAnswer) {
-		answer = newAnswer;
-	}
-
-	void setConSuc(bool correct) {
-		if (correct == true) {
-			conSuc++;
-		}
-		else {
-			conSuc = 0;
-		}
-	}
+	void setQuestion(string newQuestion);
+	void setAnswer(string newAnswer);
+	void setConSuc(bool correct);
 };
