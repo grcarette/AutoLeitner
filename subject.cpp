@@ -4,7 +4,7 @@
 
 Subject::Subject(string newName, int newIDCount) {
 	for (int i = 0; i < 5; i++) {
-		boxArr[i].setBoxType(i);
+		boxArr[i].SetBoxType(i);
 	}
 	name = newName;
 	idCount = newIDCount;
@@ -14,39 +14,39 @@ Subject::Subject(string newName, int newIDCount) {
 Subject::~Subject() {
 }
 
-void Subject::createCard(string question, string answer, int priority) {
+void Subject::CreateCard(string question, string answer, int priority) {
 	FlashCard card(question, answer, idCount, priority);
-	boxArr[0].addCard(card);
+	boxArr[0].AddCard(card);
 	idCount++;
 }
 
-void Subject::moveCard(FlashCard card, bool correct) {
+void Subject::MoveCard(FlashCard card, bool correct) {
 	if (correct) {
-		card.setConSuc(true);
-		boxArr[activeBox + 1].addCard(card);
-		boxArr[activeBox].removeCard(card.getID());
+		card.SetConSuc(true);
+		boxArr[activeBox + 1].AddCard(card);
+		boxArr[activeBox].RemoveCard(card.GetID());
 	}
 	else {
-		card.setConSuc(false);
-		boxArr[0].addCard(card);
-		boxArr[activeBox].removeCard(card.getID());
+		card.SetConSuc(false);
+		boxArr[0].AddCard(card);
+		boxArr[activeBox].RemoveCard(card.GetID());
 	}
 }
 
-void Subject::selectBox(int boxNo) {
+void Subject::SelectBox(int boxNo) {
 	activeBox = boxNo;
 }
 
-void Subject::subjectLoop() {
+void Subject::SubjectLoop() {
 	char key = 0;
 	bool continueLooping = true;
 	while (continueLooping) {
-		if (boxArr[activeBox].getCardArray().size() == 0) {
+		if (boxArr[activeBox].GetCardArray().size() == 0) {
 			printf("BOX IS EMPTY");
-			selectBox(activeBox+1);
+			SelectBox(activeBox+1);
 		}
 
-		FlashCard currentCard = boxArr[activeBox].getCardArray()[0];
+		FlashCard currentCard = boxArr[activeBox].GetCardArray()[0];
 
 		printf("Menu: \t\t\t\t\tCurrent box: %d\n", activeBox);
 		printf("%c. . . . .Next Card\n", kNextCard);
@@ -58,7 +58,7 @@ void Subject::subjectLoop() {
 		switch (key)
 		{
 		case kNextCard:
-			displayQuestion(currentCard);
+			DisplayQuestion(currentCard);
 
 			printf("Was your answer correct?\n");
 			printf("1. . . . .Correct\n");
@@ -67,13 +67,13 @@ void Subject::subjectLoop() {
 			key = getch();
 
 			if (key == '1') {
-				moveCard(currentCard, true);
+				MoveCard(currentCard, true);
 			}
 			else if (activeBox == 0) {
 				boxArr[activeBox].PushBack();
 			}
 			else {
-				moveCard(currentCard, false);
+				MoveCard(currentCard, false);
 			}
 			break;
 
@@ -82,7 +82,7 @@ void Subject::subjectLoop() {
 			cout << "Which box would you like to switch to?\n";
 			string userInput;
 			cin >> userInput;
-			selectBox(stoi(userInput));
+			SelectBox(stoi(userInput));
 			break;
 		}
 		case kQuit:
@@ -92,7 +92,7 @@ void Subject::subjectLoop() {
 	}
 }
 
-void Subject::displayQuestion(FlashCard card) {
-	cout << "Question:\n\t" << card.getQuestion() << "\n\n";
-	cout << "Answer:\n\t" << card.getAnswer() << "\n\n";
+void Subject::DisplayQuestion(FlashCard card) {
+	cout << "Question:\n\t" << card.GetQuestion() << "\n\n";
+	cout << "Answer:\n\t" << card.GetAnswer() << "\n\n";
 }

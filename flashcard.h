@@ -15,13 +15,13 @@ public:
 	FlashCard(string newQuestion, string newAnswer, int newCardID, int newPriority);
 	~FlashCard();
 
-	string getQuestion();
-	string getAnswer();
-	int getConSuc();
-	int getPriority();
-	int getID();
+	string GetQuestion();
+	string GetAnswer();
+	int GetConSuc();
+	int GetPriority();
+	int GetID();
 
-	void setQuestion(string newQuestion);
-	void setAnswer(string newAnswer);
-	void setConSuc(bool correct);
+	void SetQuestion(string newQuestion);
+	void SetAnswer(string newAnswer);
+	void SetConSuc(bool correct);
 };

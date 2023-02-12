@@ -8,13 +8,13 @@ private:
 	int boxType;
 
 public:
-	void instCards();
-	void setBoxType(int newBoxType);
-	void addCard(FlashCard card);
-	void removeCard(int index);
+	void InstCards();
+	void SetBoxType(int newBoxType);
+	void AddCard(FlashCard card);
+	void RemoveCard(int index);
 	void PushBack();
 
-	int getBoxType();
-	vector<FlashCard> getCardArray();
-	FlashCard getFC();
+	int GetBoxType();
+	vector<FlashCard> GetCardArray();
+	FlashCard GetFC();
 };

@@ -16,29 +16,29 @@ FlashCard::FlashCard(string newQuestion, string newAnswer, int newCardID, int ne
 FlashCard::~FlashCard() {
 }
 
-string FlashCard::getQuestion() {
+string FlashCard::GetQuestion() {
 	return question;
 }
-string FlashCard::getAnswer() {
+string FlashCard::GetAnswer() {
 	return answer;
 }
-int FlashCard::getConSuc() {
+int FlashCard::GetConSuc() {
 	return conSuc;
 }
-int FlashCard::getPriority() {
+int FlashCard::GetPriority() {
 	return priority;
 }
-int FlashCard::getID() {
+int FlashCard::GetID() {
 	return cardID;
 }
 
-void FlashCard::setQuestion(string newQuestion) {
+void FlashCard::SetQuestion(string newQuestion) {
 	question = newQuestion;
 }
-void FlashCard::setAnswer(string newAnswer) {
+void FlashCard::SetAnswer(string newAnswer) {
 	answer = newAnswer;
 }
-void FlashCard::setConSuc(bool correct) {
+void FlashCard::SetConSuc(bool correct) {
 	if (correct) {
 		conSuc++;
 	}

@@ -17,10 +17,10 @@ public:
 	Subject(string newName, int newIDCount);
 	~Subject();
 
-	void createCard(string question, string answer, int priority = 1);
-	void moveCard(FlashCard card, bool correct);
-	void selectBox(int boxNo);
-	void subjectLoop();
-	void displayQuestion(FlashCard card);
+	void CreateCard(string question, string answer, int priority = 1);
+	void MoveCard(FlashCard card, bool correct);
+	void SelectBox(int boxNo);
+	void SubjectLoop();
+	void DisplayQuestion(FlashCard card);
 	
 };

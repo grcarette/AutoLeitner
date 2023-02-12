@@ -3,22 +3,22 @@
 #include <cstdlib>
 #include <iostream>
 
-void FCBox::instCards() {
+void FCBox::InstCards() {
 	//instantiate cards from file
 }
 
-void FCBox::setBoxType(int newBoxType) {
+void FCBox::SetBoxType(int newBoxType) {
 	boxType = newBoxType;
 }
 
-void FCBox::addCard(FlashCard card) {
+void FCBox::AddCard(FlashCard card) {
 	cardArray.push_back(card);
 }
 
-void FCBox::removeCard(int cardID) {
+void FCBox::RemoveCard(int cardID) {
 	int i = 0;
 	for (i; i < cardArray.size(); i++) {
-		if (cardArray[i].getID() == cardID) {
+		if (cardArray[i].GetID() == cardID) {
 			break;
 		}
 	}
@@ -30,15 +30,15 @@ void FCBox::PushBack() {
 	cardArray.erase(cardArray.begin());
 }
 
-int FCBox::getBoxType() {
+int FCBox::GetBoxType() {
 	return boxType;
 }
 
-vector<FlashCard> FCBox::getCardArray() {
+vector<FlashCard> FCBox::GetCardArray() {
 	return cardArray;
 }
 
-FlashCard FCBox::getFC() {
+FlashCard FCBox::GetFC() {
 	srand(time(0));
 	return cardArray[rand() % cardArray.size()];
 }
