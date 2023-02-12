@@ -22,8 +22,12 @@ void FCBox::removeCard(int cardID) {
 			break;
 		}
 	}
-	cout << i << endl;
 	cardArray.erase(cardArray.begin() + i);
+}
+
+void FCBox::PushBack() {
+	cardArray.push_back(cardArray[0]);
+	cardArray.erase(cardArray.begin());
 }
 
 int FCBox::getBoxType() {

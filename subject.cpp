@@ -39,18 +39,14 @@ void Subject::selectBox(int boxNo) {
 
 void Subject::subjectLoop() {
 	char key = 0;
-	int i = 0;
 	bool continueLooping = true;
 	while (continueLooping) {
 		if (boxArr[activeBox].getCardArray().size() == 0) {
 			printf("BOX IS EMPTY");
-			break;
-		}
-		if (i > boxArr[activeBox].getCardArray().size()) {
-			i = 0;
+			selectBox(activeBox+1);
 		}
 
-		FlashCard currentCard = boxArr[activeBox].getCardArray()[i];
+		FlashCard currentCard = boxArr[activeBox].getCardArray()[0];
 
 		printf("Menu: \t\t\t\t\tCurrent box: %d\n", activeBox);
 		printf("%c. . . . .Next Card\n", kNextCard);
@@ -74,7 +70,7 @@ void Subject::subjectLoop() {
 				moveCard(currentCard, true);
 			}
 			else if (activeBox == 0) {
-				i++;
+				boxArr[activeBox].PushBack();
 			}
 			else {
 				moveCard(currentCard, false);
@@ -87,7 +83,6 @@ void Subject::subjectLoop() {
 			string userInput;
 			cin >> userInput;
 			selectBox(stoi(userInput));
-			i = 0;
 			break;
 		}
 		case kQuit:
@@ -99,6 +94,5 @@ void Subject::subjectLoop() {
 
 void Subject::displayQuestion(FlashCard card) {
 	cout << "Question:\n\t" << card.getQuestion() << "\n\n";
-	//cin.get();
 	cout << "Answer:\n\t" << card.getAnswer() << "\n\n";
 }

@@ -12,6 +12,7 @@ public:
 	void setBoxType(int newBoxType);
 	void addCard(FlashCard card);
 	void removeCard(int index);
+	void PushBack();
 
 	int getBoxType();
 	vector<FlashCard> getCardArray();
